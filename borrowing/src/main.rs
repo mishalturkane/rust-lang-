@@ -1,14 +1,13 @@
-// Define a function that takes a reference to an integer
-fn print_number(num: &i32) {
-    println!("The number is: {}", num);
-}
-
 fn main() {
-    let number = 42; // Define an integer variable
+    let mut variable = 10; // Define a mutable variable
 
-    // Call the function and pass a reference to the integer variable
-    print_number(&number);
+    let immutable_reference = &variable; // Immutable reference
+    println!("Value of variable using immutable reference: {}", immutable_reference);
 
-    // Attempting to use 'number' after passing a reference is fine, because borrowing does not take ownership
-    println!("The number after borrowing: {}", number);
+    // Uncommenting the line below will result in a compilation error because you cannot have a mutable reference while an immutable reference exists.
+     let mutable_reference = &mut variable;
+
+    // Attempting to modify variable using an immutable reference will result in a compilation error.
+    // Uncommenting the line below will result in a compilation error.
+    // *immutable_reference = 20;
 }
