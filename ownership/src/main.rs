@@ -1,8 +1,15 @@
 fn main() {
     
-    let x = String::from("Hello");
-    let y = x;
-    println!("the value of y is:{}",y);
+    let mut s1 = String::from("Hello");
+    
+    let len ;
+    (len,s1) = calculate_length(s1);
 
+    println!("the length of {} is {}",s1,len );
+
+
+}
+fn calculate_length(s: String) -> (usize,String) {
+    (s.len(),s)
 
 }
