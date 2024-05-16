@@ -1,11 +1,15 @@
 fn main(){
-    let s1 = String::from("Hello");
 
-    let length = length(s1);
 
-    println!("{}",length);
+    let mut  my_string = String::from("hello");
 
-}
-fn length(s: String) -> String {
-    s
+
+    let r1 = &my_string;
+
+    println!("{} ",r1);
+
+    let mut_ref = &mut my_string;
+
+    println!("{}",mut_ref);
+
 }
