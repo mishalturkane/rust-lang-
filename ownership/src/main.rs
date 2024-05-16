@@ -1,15 +1,11 @@
 fn main() {
-    
-    let mut s1 = String::from("Hello");
-    
-    let len ;
-    (len,s1) = calculate_length(s1);
-
-    println!("the length of {} is {}",s1,len );
-
+  let my_str = "hello world";
+   println!("Old my_str is :{}",my_str);
+   print_string(my_str);
+    println!("Old my_str2 is :{}",my_str);
 
 }
-fn calculate_length(s: String) -> (usize,String) {
-    (s.len(),s)
 
+fn print_string(string: &str)     {
+  println!("print the value in function of string :{}",string);
 }
