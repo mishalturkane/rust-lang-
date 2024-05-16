@@ -1,11 +1,12 @@
-fn main() {
-  let my_str = "hello world";
-   println!("Old my_str is :{}",my_str);
-   print_string(my_str);
-    println!("Old my_str2 is :{}",my_str);
+fn main (){
+
+    let mut  string = String::from("hello world");
+
+    let length;
+    (length,string) = print_string(string);
+    println!("length is :{} and string is:{}",length,string);
 
 }
-
-fn print_string(string: &str)     {
-  println!("print the value in function of string :{}",string);
+fn print_string(string: String) -> (usize,String){
+    (string.len(),string)
 }
