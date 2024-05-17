@@ -42,6 +42,20 @@ fn main() {
     let area = my_rectangle.area();
     println!("are of the rectangle is:{}",area);
 
+    let mishal = CyberSecurity{
+        name: String::from("Mishal"),
+        enrollment_number: String::from("0126cy211034"),
+        cgpa: 9.87,
+    };
+
+    println!("Mishal is:{:?}",mishal);
+
+    let pooja = CyberSecurity{
+        name: String::from("Pooja"),
+        enrollment_number: String::from("0126cy211051"),
+        cgpa: 98.9,
+    };
+    println!("pooja is:{:?}",pooja);
 
 }
 
@@ -80,3 +94,12 @@ impl Rectangle {
         return &self.width * &self.height;
     }
 }
+
+
+#[derive(Debug)]
+struct  CyberSecurity{
+    name: String,
+    enrollment_number: String,
+    cgpa: f32,
+}
+
