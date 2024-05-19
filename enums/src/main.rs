@@ -1,30 +1,31 @@
-enum Cartypes {
-    Hatchback,
-    Sedan,
-    SUV,
-    MUV
-}
-fn  print_cars(car:Cartypes){
-   match car{
-    Cartypes::Hatchback =>{
-        println!("Small car in  a segment");
-    }
+fn main(){
 
-    Cartypes::Sedan =>{
-        println!("Luxury car in a segment");
-    }
-
-    Cartypes::SUV =>{
-        println!("Sport  utility bassed vehicle");
-    }
-    Cartypes::MUV =>{
-        println!(" Multi  utility bassed vehicle");
-    }
-   }
-
+    let msg = Message::Write("Hello Rust".to_string());
+   process_massage(msg);
 }
 
-fn main() {
-    println!("Enums Demo");
-    print_cars(Cartypes::Sedan);
+
+enum Message{
+    Quit,
+    Move {x:i32,y:i32},
+    Write(String),
+    changeColor(i32,i32,i32),
+}
+fn process_massage(msg:Message){
+    match msg{
+        Message::Quit =>{
+            println!("Please quit the chat");
+        }
+        Message::Move{y,x} => {
+            println!("i am moving from x: {} to y:{}",x,y);
+        }
+        Message::Write(msg) =>{
+            println!("Message is:{}",msg);
+        }
+        Message::changeColor(r,g,b) => {
+            println!("colors are : r {} g {} b{}",r,g,b);
+        }
+
+    }
+
 }

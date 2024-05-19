@@ -1,8 +1,12 @@
 fn main(){
-  let numbers = [1,2,3,4,5];
+  let my_string1 = String::from("hello");
+  let my_string2 = String::from("word");
 
-  let slice = &numbers[0..5];
-
-  println!("slice first element is {}",slice[0]);
-
+  let concatenated_string = concatenate_string(&my_string1, &my_string2);
+println!("The concatenated string is:{}",concatenated_string);
+}
+fn concatenate_string(s1: &str , s2: &str) -> String{
+ let mut  result = String::from(s1);
+  result.push_str(s2);
+  result
 }
