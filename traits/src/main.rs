@@ -1,35 +1,64 @@
-trait Animal {
-    fn make_sound(&self);
+use std::io;
+
+fn main(){
+
+
+    let mut  input = String::new();
+
+    println!("Please enter a radius:");
+
+    io::stdin().read_line(&mut input).expect("failed to read line");
+
+    let radius: f64  = input.trim().parse().expect("failed to read line");
+
+    let circle= Circle{
+        radius
+    };
+    circle.display();
+
+
+    input.clear();
+    println!("Please enter a heigth:");
+
+    io::stdin().read_line(&mut input).expect("failed to read line");
+
+    let heigth: f64  = input.trim().parse().expect("failed to read line");
+
+    input.clear();
+    println!("Please enter a heigth:");
+
+    io::stdin().read_line(&mut input).expect("failed to read line");
+
+    let width: f64  = input.trim().parse().expect("failed to read line");
+
+    let rectangle = Rectangle{
+        heigth,
+        width
+    };
+
+    rectangle.display();
+
 }
 
-struct Dog;
-struct Cat;
-struct Cow;
+trait  Display{
+    fn display(&self);
+}
+struct  Circle {
+    radius: f64,
+}
 
-impl Animal for Cow {
-    fn make_sound(&self) {
-        println!("Cow says: Moo!");
+struct  Rectangle{
+    heigth: f64,
+    width: f64,
+}
+
+impl Display for Rectangle{
+    fn display(&self) {
+        println!("area of rectangle is:{}",0.5*self.heigth*self.width);
     }
 }
-
-impl Animal for Dog {
-    fn make_sound(&self) {
-        println!("Dog says: Woof!");
+impl Display for Circle{
+    fn display(&self)   {
+       println!("area of circle is :{}", 3.14 * (self.radius * self.radius));
     }
-}
-
-impl Animal for Cat {
-    fn make_sound(&self) {
-        println!("Cat says: Meow!");
-    }
-}
-
-fn main() {
-    let dog = Dog;
-    let cat = Cat;
-    let cow = Cow;
-
-    dog.make_sound();
-    cat.make_sound();
-    cow.make_sound();
 }
