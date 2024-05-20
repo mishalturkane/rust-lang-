@@ -13,7 +13,7 @@ fn main() {
   println!("{:?}",mishal);
 
   score.remove(&36);
-  println!("{:?}",score);ar
+  println!("{:?}",score);
 
 
 }

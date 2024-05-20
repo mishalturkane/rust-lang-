@@ -35,3 +35,4 @@ impl PrintTable for Pen{
         println!("color is {}, brand is {}",self.color,self.brand);
     }
 }
+
