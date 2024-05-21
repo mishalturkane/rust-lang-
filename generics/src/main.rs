@@ -26,9 +26,17 @@ fn main() {
 
 
     let proint = Point {x:5,y:10};
+
+    let int_container = Container{value: 42};
+
+    println!("the value is :{}",int_container);
 }
 
 struct  Point<T> {
     x:T,
     y:T,
+}
+
+struct  Container<T>{
+     value:T,
 }
